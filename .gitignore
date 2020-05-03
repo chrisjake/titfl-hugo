@@ -1,3 +1,6 @@
+.Rhistory
+.DS_store
+
+#yes really. Ignore content if building with R, it will just get in the way.
 public/
-exampleSite/public/
-.DS_Store
+content/

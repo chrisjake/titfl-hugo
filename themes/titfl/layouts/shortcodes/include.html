@@ -1,0 +1,14 @@
+<!-- Can change $dir to match whatever directory for your incomplete shortcodes //-->
+
+{{ $dir := "./content/stubs/" }}
+
+{{ $file := .Get 0 }}
+{{ $file := print $dir $file }}
+
+{{ if strings.HasSuffix $file ".rmarkdown" }}
+	{{ $file := strings.TrimSuffix "rmarkdown" $file }}
+	{{ print $file "markdown" | readFile | markdownify | safeHTML }}
+{{ else if or (or (strings.HasSuffix $file ".md") (strings.HasSuffix $file ".markdown")) }}
+	{{ $file | readFile | markdownify | safeHTML }}
+{{ end }}
+

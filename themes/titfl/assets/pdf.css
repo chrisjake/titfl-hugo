@@ -1,0 +1,52 @@
+.pdf-toc {
+    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "serif!important";
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+.cover-page {
+    text-align: center;
+}
+
+.pdf-toc h1 {
+    text-align: center;
+}
+
+
+.pdf-toc h2 {
+    font-size: 1.6em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.pdf-toc h3 {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.pdf-toc ul, li{
+   list-style-type: none;
+}
+
+.pdf-toc > ul {
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+}
+
+.book-page {
+    padding-left: 20%;
+    padding-right: 0;
+    max-width: 80%;
+}
+
+.sidenote, .marginnote {
+    max-width: 30%;
+    margin-right: -30%;
+    padding-left: 2.5%;
+    padding-right: 0;
+}
+
+body > div.pdf-toc.article.markdown > div {
+    padding-left: 22.5%;
+    padding-right: 22.5%;
+}

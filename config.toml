@@ -1,0 +1,37 @@
+baseURL = ""
+title = "Tufte in the Fast Lane"
+theme = "titfl"
+ignoreFiles = [
+  "\\.Rmd$",
+  "\\.Rmarkdown$",
+  "\\.rmarkdown$",
+  "_files$",
+  "_cache$"
+]
+
+disablePathToLower = true
+enableGitInfo = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+  startLevel = 1.0
+
+[languages]
+  [languages.en]
+  languageName = "English"
+  contentDir = "content"
+  weight = 1.0
+
+[params]
+BookToC = 3.0
+BookSection = "docs"
+BookRepo = 'https://github.com/cjdbarlow/titfl'
+BookEditPath = "edit/master/exampleSite/content"
+BookDateFormat = "Jan 2, 2006"
+BookSearch = true
+BookComments = true
+BookPortableLinks = true
+bookCollapseSection = true

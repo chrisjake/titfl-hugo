@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{- template "_internal/twitter_cards.html" . -}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="{{ "elem-hide.js" | relURL }}"></script>
+{{ partial "mathjax.html" . }}
+
+<!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
+{{- $styles := resources.Get "book.scss" | resources.ExecuteAsTemplate "book.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+  {{ partial "docs/inject/head" . }}
+  <style>
+  .marginnote .highlight pre {
+      display: none;
+  }
+  </style>
+</head>
+
+<body>
+<div class = "cover-page">
+  <h1>{{ .Site.Title }}</h1>
+</div>
+<div class = "pagebreak"></div>
+<div class="pdf-toc article markdown">
+  <h1>Table of Contents</h1>
+    <div class="toc-list">
+    <!-- This is the ugliest script ever but I have left it because it is adequate and it may end up being done with R anyway. Yes it should be iterated through. -->
+    {{ range where .Site.Sections "Section" "=" "docs"}}
+    {{range .Data.Pages}}
+    <a href="#{{ substr .RelPermalink 1 -1 }}"><strong>
+            <h2>{{ .Title }}</h2>
+        </strong></a>
+    {{range .Data.Pages}}
+    <ul>
+        <li><a href="#{{ substr .RelPermalink 1 -1 }}">{{ .Title }}</a></li>
+        <ul>
+            {{range .Data.Pages}}
+            <li><a href="#{{ substr .RelPermalink 1 -1 }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </ul>
+    {{ end }}
+    <br>
+    {{ end }}
+    {{ end }}
+    <hr>
+  </div>
+</div>
+    <!-- needs a fix to only include content if page exists -->
+<div class = "pagebreak"></div>
+  <main class="flex pdf-container">
+    <div class="book-page">
+      <article class="markdown">
+          <div class = "pagebreak"></div>
+          <div class = "pdf-content">
+          {{ range where .Site.Sections "Section" "=" "docs"}}
+            {{range .Data.Pages}}
+              <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+              {{ .Content }}
+              <hr>
+              <div class = "pagebreak"></div>
+              {{range .Data.Pages}}
+                <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+                {{ .Content }}
+                <hr>
+                <div class = "pagebreak"></div>
+                {{range .Data.Pages}}
+                  <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+                  {{ .Content }}
+                  <hr>
+                  <div class = "pagebreak"></div>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
+

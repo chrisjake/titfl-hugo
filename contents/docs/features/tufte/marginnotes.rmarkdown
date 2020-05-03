@@ -1,0 +1,32 @@
+---
+title: Margin Notes
+weight: 1
+---
+
+# Margin Notes
+
+Probably the most recognised element of Edward Tufte's style, the margin notes allows extra {{< marginnote >}}This is a margin note.{{< /marginnote >}} ideas or supplementary information to be jotted in line with a paragraph of text.
+
+{{< marginnote >}}
+This is R code that is executed during site generationdocs```{r}
+library(ggplot2)
+library(ggExtra)
+library(ggthemes)
+p <- ggplot(faithful, aes(waiting, eruptions)) + geom_point() + theme_tufte(ticks=F) +
+  theme(axis.title=element_blank(), axis.text=element_blank())
+ggMarginal(p, type = "boxplot", size=10, fill="transparent")
+```
+{{< /marginnote >}}
+
+
+Note that margin notes may need to be written in the middle of the paragraph so they show up nicely in-line with it.
+
+*Almost* anything that can be placed in markdown can be placed in a margin note, including executable R code!
+
+## How To
+
+```tpl
+...need to be written in the middle {{</* marginnote */>}}
+This is a margin note.
+{{</* /marginnote */>}}of the paragraph so they show up nicely in-line...
+```

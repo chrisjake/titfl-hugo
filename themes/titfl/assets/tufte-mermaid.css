@@ -1,0 +1,97 @@
+
+
+.mermaid {
+    background: #fff !important;
+}
+
+.node rect, .node circle, .node ellipse, .node polygon, .node path {
+	 fill: #f8f9fa;
+	 stroke: #999;
+	 stroke-width: 0.5px;
+}
+
+.node .label {
+	 text-align: center;
+}
+ .node.clickable {
+	 cursor: pointer;
+}
+ .arrowheadPath {
+	 fill: #333;
+}
+ .edgePath .path {
+	 stroke: #666;
+	 stroke-width: 1.5px;
+}
+ .edgeLabel {
+	 background-color: white;
+	 text-align: center;
+}
+ .cluster rect {
+	 fill: #a6e22e;
+	 stroke: #272822;
+	 stroke-width: 1px;
+}
+ .cluster text {
+	 fill: #333;
+}
+ div.mermaidTooltip {
+	 position: absolute;
+	 text-align: center;
+	 max-width: 200px;
+	 padding: 2px;
+	 font-family: 'trebuchet ms', verdana, arial;
+	 font-family: var(--mermaid-font-family);
+	 font-size: 12px;
+	 background: #eaf2fb;
+	 border: 1px solid #008cff;
+	 border-radius: 2px;
+	 pointer-events: none;
+	 z-index: 100;
+}
+ .actor {
+	 stroke: #999;
+	 fill: #eee;
+}
+ text.actor {
+	 fill: #333;
+	 stroke: none;
+}
+ .actor-line {
+	 stroke: #666;
+}
+ .messageLine0 {
+	 stroke-width: 1.5;
+	 stroke-dasharray: '2 2';
+	 stroke: #333;
+}
+ .messageLine1 {
+	 stroke-width: 1.5;
+	 stroke-dasharray: '2 2';
+	 stroke: #333;
+}
+ #arrowhead {
+	 fill: #333;
+}
+ .sequenceNumber {
+	 fill: white;
+}
+ #sequencenumber {
+	 fill: #333;
+}
+ #crosshead path {
+	 fill: #333 !important;
+	 stroke: #333 !important;
+}
+ .messageText {
+	 fill: #333;
+	 stroke: none;
+}
+ .labelBox {
+	 stroke: #999;
+	 fill: #eee;
+}
+ .labelText {
+	 fill: #333;
+	 stroke: none;
+}
