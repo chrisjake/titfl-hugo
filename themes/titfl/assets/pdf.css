@@ -42,6 +42,7 @@ body > div.pdf-toc.article.markdown > div {
 .pdf-container .book-page {
     padding-left: 20%;
     padding-right: 0;
+    min-width: 80%;
     max-width: 80%;
 }
 
