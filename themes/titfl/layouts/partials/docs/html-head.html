@@ -12,6 +12,9 @@
 <script src="{{ "elem-hide.js" | relURL }}"></script>
 {{ partial "mathjax.html" . }}
 
+
+<link rel="stylesheet" href="https://use.typekit.net/dwz0tme.css">
+
 <!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
 {{- $styles := resources.Get "book.scss" | resources.ExecuteAsTemplate "book.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">

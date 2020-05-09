@@ -241,6 +241,9 @@ p.subtitle {
 }
 
 article {
+    font-family: source-sans-pro, sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
     position: relative;
     padding: 1.3rem 0rem;
     width: 100%
@@ -404,7 +407,7 @@ pre.code {
 
 span.newthought {
     font-variant: small-caps;
-    font-size: 1.2em
+    font-size: 1.2rem
 }
 
 h1 .code,

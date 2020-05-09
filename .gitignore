@@ -4,3 +4,5 @@
 #yes really. Ignore content if building with R, it will just get in the way.
 public/
 content/
+resources/
+static/

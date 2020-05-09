@@ -63,19 +63,25 @@
           {{ range where .Site.Sections "Section" "=" "docs"}}
             {{range .Data.Pages}}
               <p id="{{ substr .RelPermalink 1 -1 }}"></p>
-              {{ .Content }}
-              <hr>
-              <div class = "pagebreak"></div>
-              {{range .Data.Pages}}
-                <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+              {{if gt (len .Content) 10 }} <!-- Prevents empty pages (used to delineate structure) printing -->
                 {{ .Content }}
                 <hr>
                 <div class = "pagebreak"></div>
-                {{range .Data.Pages}}
-                  <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+              {{ end }}
+              {{range .Data.Pages}}
+                <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+                {{if gt (len .Content) 10 }}
                   {{ .Content }}
                   <hr>
                   <div class = "pagebreak"></div>
+                {{ end }}
+                {{range .Data.Pages}}
+                  <p id="{{ substr .RelPermalink 1 -1 }}"></p>
+                  {{if gt (len .Content) 10 }}
+                    {{ .Content }}
+                    <hr>
+                    <div class = "pagebreak"></div>
+                  {{ end }}
                 {{ end }}
               {{ end }}
             {{ end }}

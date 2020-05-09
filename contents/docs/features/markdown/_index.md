@@ -19,8 +19,8 @@ Markdown is a lightweight and simple way of writing. It is a plain text formatti
 Markdown can be divided into:
 * Basic markdown  
 The original syntax as described by John Gruber.
-* Various extensions or 'flavours' of markdown  
-Offer additional functionality.
+* Extended markdown  
+Offers additional functionality, and come in many different variants (or 'flavours').
 
 In order to keep the threshold of technical skill for authors as low as possible, TITFL defaults to the markdown flavour (Goldmark) used by Hugo. 
 
