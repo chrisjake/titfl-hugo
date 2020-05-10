@@ -32,7 +32,6 @@
 {{ define "book-section-children" }}
 {{ $ancestor := .Section.IsAncestor .CurrentPage }}
 {{ $collapse := .Section.Params.bookCollapseSection }}
-{{ if or $ancestor (not $collapse) }}
   {{ with .Section }}
   <ul>
     {{ range where .Pages "Params.bookhidden" "!=" "true" }}
@@ -47,27 +46,28 @@
   </ul>
   {{ end }}
 {{ end }}
-{{ end }}
 
 {{ define "book-page-link" }}
 {{ $paginator := .Paginator }}
 {{ with .Page }}
-  {{ if .Content }}
-  <a href="{{ .RelPermalink }}" class="
-      {{- if .Params.bookCollapseSection}} collapsible{{ end }}
-      {{- if eq $.CurrentPage.RelPermalink .RelPermalink }} active{{ end }}
-      {{- if (.IsAncestor $.CurrentPage) }} uncollapsed{{ end }}">
-    {{- partial "docs/title" . -}}
-  </a>
-  {{ else if .Params.bookCollapseSection}}
-  <a href="  {{ range first 1 .Pages.ByWeight }}{{.Page.RelPermalink}}{{ end }}" class="
-      {{- if .Params.bookCollapseSection}} collapsible{{ end }}
-      {{- if eq $.CurrentPage.RelPermalink .RelPermalink }} active{{ end }}
-      {{- if (.IsAncestor $.CurrentPage) }} uncollapsed{{ end }}">
-    {{- partial "docs/title" . -}}
-  </a>
+  {{ if .Params.bookCollapseSection }}
+    {{ if (.IsAncestor $.CurrentPage) }}
+      <input class="toc-check" type="checkbox" id="checkbox{{ .RelPermalink }}" checked="true"/>
+    {{ else }}
+      <input class="toc-check" type="checkbox" id="checkbox{{ .RelPermalink }}"/>
+    {{ end }}
+    <label for="checkbox{{ .RelPermalink }}" class="nav-arrow"></label>
+    <a href="{{ range first 1 .Pages.ByWeight }}{{.Page.RelPermalink}}{{ end }}"
+      class="{{ if eq $.CurrentPage.RelPermalink .RelPermalink }} active{{ end }}">
+      {{ partial "docs/title" . }}
+    </a>
+  {{ else if .Content }}
+    <a href="{{ .RelPermalink }}"
+      class="{{ if eq $.CurrentPage.RelPermalink .RelPermalink }} active{{ end }}">
+      {{ partial "docs/title" . }}
+    </a>
   {{ else }}
-  <span>{{- partial "docs/title" . -}}</span>
+    <span>{{ partial "docs/title" . }}</span>
   {{ end }}
 {{ end }}
 {{ end }}

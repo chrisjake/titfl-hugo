@@ -602,20 +602,31 @@ label.margin-toggle:not(.sidenote-number) {
     margin: 0 0 !important
 }
 
-.collapsible::before {
+.toc-check {
+    display: none;
+}
+
+.toc-check ~ ul {
+    display: none;
+}
+
+.toc-check:checked ~ ul {
+    display: block;
+}
+
+.toc-check:checked + .nav-arrow::before {
+    content: "\f107";
+}
+
+.nav-arrow:hover {
+    cursor: pointer;    
+}
+
+.nav-arrow::before {
     position: absolute;
     font-family: "FontAwesome";
     font-weight: 400;
     content: "\f105";
-    left: -0.8em;
-    top: -0.1em
-}
-
-.collapsible.uncollapsed::before {
-    position: absolute;
-    font-family: "FontAwesome";
-    font-weight: 400;
-    content: "\f107";
     left: -1em;
     top: -0.05em
 }
