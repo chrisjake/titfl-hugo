@@ -5,8 +5,6 @@ html {
 
 body {
     margin: 0 auto;
-    background-color: rgba(250, 250, 250, 1);
-    color: #111;
     counter-reset: sidenote-counter
 }
 
@@ -28,7 +26,8 @@ hr {
 }
 
 pre {
-    font: 1em monospace, monospace
+    font: 1em monospace, monospace;
+    white-space: pre-wrap;
 }
 
 a {
@@ -42,7 +41,7 @@ abbr[title] {
     background-repeat: no-repeat,no-repeat,repeat-x;
     text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
     background-position: 0% 93%,100% 93%,0% 93%;
-    background-position-y: 90%,90%,90%;
+    background-position-y: 88%,88%,88%;
 }
 
 b,
@@ -333,7 +332,6 @@ figure.fullwidth figcaption {
 .marginnote {
     color: #3a4145;
     text-rendering: geometricPrecision;
-    font: 1.1rem/1.3 "et-book", -apple-system, "San Francisco", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Lucida Grand", sans-serif;
     box-sizing: border-box;
     float: right;
     clear: right;
@@ -345,6 +343,14 @@ figure.fullwidth figcaption {
     margin-bottom: 0;
     vertical-align: baseline;
     position: relative
+}
+
+.sidenote {
+    font: 1.1rem/1.3 "et-book", -apple-system, "San Francisco", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Lucida Grand", sans-serif;    
+}
+
+.marginnote {
+    font: italic 1.1rem/1.3 et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !important;
 }
 
 .table-caption {
@@ -531,30 +537,8 @@ label.margin-toggle:not(.sidenote-number) {
         padding: 0 0 0 !important
     }
 
-    .marginnote {
-        display: block;
-        float: left;
-        left: 1rem;
-        clear: both;
-        width: 65%;
-        margin: 1rem 2.5% 1rem 0;
-        vertical-align: baseline;
-        position: relative;
-        font-style: italic;
-        border-top: 1px double;
-        border-bottom: 1px double;
-        padding: 4px
-    }
 }
 
-.marginnote {
-    font: italic 1.1rem/1.3 et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif !important;
-    letter-spacing: normal;
-    word-spacing: normal;
-    color: #3a4145;
-    text-rendering: geometricPrecision;
-    box-sizing: border-box
-}
 
 .toc-header {
     top: 10%;
@@ -562,6 +546,10 @@ label.margin-toggle:not(.sidenote-number) {
     color: #3a4145;
     white-space: nowrap;
     padding-bottom: 0.4em
+}
+
+.book-menu nav > ul {
+    transform: translate(7.5%);
 }
 
 .book-toc a:hover,

@@ -1,0 +1,1 @@
+system("node pdfgen/generatepdf.js")

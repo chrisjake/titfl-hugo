@@ -23,7 +23,7 @@
   </style>
 </head>
 
-<body>
+<body class = "pdf-body">
 <div class = "cover-page">
   <h1>{{ .Site.Title }}</h1>
 </div>
@@ -63,24 +63,25 @@
           {{ range where .Site.Sections "Section" "=" "docs"}}
             {{range .Data.Pages}}
               <p id="{{ substr .RelPermalink 1 -1 }}"></p>
-              {{if gt (len .Content) 10 }} <!-- Prevents empty pages (used to delineate structure) printing -->
+              {{if gt (len .RawContent) 100 }} <!-- Prevents empty pages (used to delineate structure) printing -->
                 {{ .Content }}
                 <hr>
                 <div class = "pagebreak"></div>
               {{ end }}
               {{range .Data.Pages}}
                 <p id="{{ substr .RelPermalink 1 -1 }}"></p>
-                {{if gt (len .Content) 10 }}
+                {{if gt (len .RawContent) 100 }}
                   {{ .Content }}
                   <hr>
                   <div class = "pagebreak"></div>
                 {{ end }}
                 {{range .Data.Pages}}
                   <p id="{{ substr .RelPermalink 1 -1 }}"></p>
-                  {{if gt (len .Content) 10 }}
+                  {{if gt (len .RawContent) 100 }}
                     {{ .Content }}
                     <hr>
                     <div class = "pagebreak"></div>
+                  {{ else }}
                   {{ end }}
                 {{ end }}
               {{ end }}

@@ -15,13 +15,10 @@ body {
   font-family: 'Roboto', sans-serif;
   color: $body-font-color;
   background: $body-background;
-
   font-weight: $body-font-weight;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   box-sizing: border-box;
   * {
     box-sizing: inherit;
@@ -134,7 +131,7 @@ ul.pagination {
     margin-top: $padding-16 * 2;
   }
 
-  > a,
+  > a,  
   > span {
     font-weight: bolder;
   }
@@ -157,6 +154,10 @@ ul.pagination {
 .book-header {
   display: none;
   margin-bottom: $padding-16;
+  flex: flex-start;
+  width: 112.5%;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #efefef;
 
   label {
     line-height: 0;
@@ -312,6 +313,10 @@ aside nav,
     margin-left: -$menu-width;
     font-size: $font-size-base;
   }
+  .book-menu nav{
+    padding: $padding-16 * 2;
+    padding-right: 2.5rem;
+  }
 
   .book-toc {
     display: none;
@@ -319,6 +324,16 @@ aside nav,
 
   .book-header {
     display: block;
+  }
+
+  .hint-text {
+      max-width: 85%;
+      transform: translate(20%);
+  }
+
+  .mobile-title {
+      display: inline-block;
+      font-family: et-book;
   }
 
   #menu-control:checked + main {

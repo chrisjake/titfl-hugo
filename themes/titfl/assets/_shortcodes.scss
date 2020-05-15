@@ -82,34 +82,6 @@
   }
 }
 
-// {{< button >}}
-.book-btn {
-    letter-spacing: .33px;
-    font-weight: 400;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    font-family: roboto,sans-serif;
-    background-color: transparent;
-    box-sizing: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-a.book-btn {
-  display: inline-block;
-  font-size: $font-size-14;
-  color: $color-link;
-  line-height: $padding-16 * 2;
-  padding: 0 $padding-16;
-  border: $padding-1 solid $color-link;
-  border-radius: $border-radius;
-  cursor: pointer;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-
 // {{< hint >}}
 .book-hint {
   position: relative;
@@ -130,6 +102,6 @@ a.book-btn {
 .hint-text {
   font-family: -apple-system,san francisco,segoe ui,roboto,oxygen,ubuntu,cantarell,open sans,helvetica neue,lucida grand,sans-serif !important;
   font-size: 1rem;
-  max-width: 92%;
-  transform: translate(8%)    
+  max-width: 95%;
+  transform: translate(5%);
 }

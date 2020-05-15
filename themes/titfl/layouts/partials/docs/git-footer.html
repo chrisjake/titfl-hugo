@@ -15,7 +15,8 @@
   <div>
     {{ if $.File }}
     <a class="flex align-center" href="{{ $.Site.Params.BookRepo }}/{{ . }}/{{ $.File.Path }}" target="_blank" rel="noopener">
-      <img src="{{ "svg/edit.svg" | relURL }}" alt="Edit" />
+      <i class="fas fa-pen"alt="Edit"></i>
+      <img src="{{ "svg/edit.svg" | relURL }}"  />
       <span>Could be better? Edit this page!</span>
     </a>
     {{ end }}

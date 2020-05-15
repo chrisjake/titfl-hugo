@@ -1,8 +1,10 @@
 .Rhistory
 .DS_store
+package-lock.json
 
+resources/
+static/
+node_modules/
 #yes really. Ignore content if building with R, it will just get in the way.
 public/
 content/
-resources/
-static/

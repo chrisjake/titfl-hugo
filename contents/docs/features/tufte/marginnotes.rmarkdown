@@ -5,10 +5,14 @@ weight: 1
 
 # Margin Notes
 
-Probably the most recognised element of Edward Tufte's style, the margin notes allows extra {{< marginnote >}}This is a margin note.{{< /marginnote >}} ideas or supplementary information to be jotted in line with a paragraph of text.
+{{< marginnote >}}This is a margin note.{{< /marginnote >}} 
+
+Probably the most recognised element of Edward Tufte's style, the margin notes allows extra ideas or supplementary information to be jotted in line with a paragraph of text.
 
 {{< marginnote >}}
-This is R code that is executed during site generationdocs```{r}
+This is R code that is executed during site generation.
+
+```{r}
 library(ggplot2)
 library(ggExtra)
 library(ggthemes)
@@ -26,7 +30,7 @@ Note that margin notes may need to be written in the middle of the paragraph so 
 ## How To
 
 ```tpl
-...need to be written in the middle {{</* marginnote */>}}
+{{</* marginnote */>}}
 This is a margin note.
-{{</* /marginnote */>}}of the paragraph so they show up nicely in-line...
+{{</* /marginnote */>}}
 ```
