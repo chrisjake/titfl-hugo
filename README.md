@@ -5,6 +5,8 @@
 
 A theme for [Blogdown](https://bookdown.org/yihui/blogdown/) with [Hugo](https://gohugo.io), based on the excellent [Hugo Book](https://github.com/alex-shpak/hugo-book) theme from [Alex Shpak](https://github.com/alex-shpak).
 
+**Note**: This has now been abandoned in favour of a *book*down-based approach, which offers more flexibility and fewer dependencies than blogdown. It is left here because it works, and as a reminder that I should read more before I start building. I will probably forget.
+
 ## Requirements
 For the basic theme:
 * Hugo
